@@ -141,4 +141,4 @@ export const SONOMETERS = [
     }
 ];
 
-log("Adresses sonomètres chargées :", Object.keys(SONO_ADDRESSES).length);
+log("Adresses sonomètres chargées :", Object.keys(SONOMETERS).length);
