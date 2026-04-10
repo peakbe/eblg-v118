@@ -11,6 +11,19 @@ export function initMap() {
         if (!container) {
             throw new Error("Map container #map introuvable dans le DOM.");
         }
+        import { initSonometers } from "./sonometers.js";
+        import { createStaticHeatmap } from "./sonometers.js";
+
+        export function initMap() {
+        const map = L.map("map").setView([50.64, 5.44], 12);
+
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(map);
+
+        initSonometers(map);
+        createStaticHeatmap(map); // heatmap prête mais pas affichée
+
+        return map;
+        }
 
         // Empêche Leaflet de réinitialiser une carte existante
         if (map !== null) {
